@@ -70,6 +70,13 @@ Gera um QR Code a partir do texto fornecido e armazena-o no AWS S3. O QR Code se
 |:-------:|:------------:|:-------------------:|:--------------------------------------------------------------------------------------------------------------------------:|
 | `text`  | required | string  | O conteúdo textual a ser codificado no QR Code. Pode ser qualquer valor de string que você queira converter em um QR Code. | 
 
+#### Exemplo de uso
+```
+curl -X POST http://localhost:8080/qrcode \
+     -H "Content-Type: application/json" \
+     -d '{"text": "https://example.com"}' 
+```
+
 #### Response 
 ``` 
 {
@@ -78,12 +85,5 @@ Gera um QR Code a partir do texto fornecido e armazena-o no AWS S3. O QR Code se
 ```
 #### Error Response
 Se ocorrer um erro durante a geração do código QR ou o upload do S3, a API retornará um erro interno do servidor 500.
-
-#### Exemplo de uso
-```
-curl -X POST http://localhost:8080/qrcode \
-     -H "Content-Type: application/json" \
-     -d '{"text": "https://example.com"}' 
-```
 
 #### A API poderá ser acessada em http://localhost:8080/qrcode.
